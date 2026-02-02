@@ -33,7 +33,7 @@ export function DailyTimeline() {
     ]
 
     return (
-        <div className="bg-white rounded-2xl p-6 shadow-[0px_4px_20px_rgba(0,0,0,0.04)]">
+        <div className="bg-white rounded-2xl p-6 shadow-[0px_4px_20px_rgba(0,0,0,0.04)] relative">
             {/* Date Horizon */}
             <div className="flex items-center gap-2 mb-6 pb-4 border-b border-[#E5E7EB]">
                 {dates.map((date) => (
@@ -58,8 +58,12 @@ export function DailyTimeline() {
                     <Calendar className="h-5 w-5 text-[#6C5DD3]" />
                     <h3 className="font-semibold text-[15px] text-[#1A1D1F]">Today's Timeline</h3>
                 </div>
-                <button className="text-sm text-[#6F767E] hover:text-[#6C5DD3] transition-colors">
-                    View Calendar
+                <button className="text-[#9A9FA5] hover:text-[#1A1D1F] transition-colors">
+                    <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <circle cx="12" cy="6" r="1.5" fill="currentColor" />
+                        <circle cx="12" cy="12" r="1.5" fill="currentColor" />
+                        <circle cx="12" cy="18" r="1.5" fill="currentColor" />
+                    </svg>
                 </button>
             </div>
 

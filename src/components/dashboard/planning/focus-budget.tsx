@@ -29,13 +29,18 @@ export function FocusBudget() {
     }, [isRunning, timeRemaining])
 
     return (
-        <div className="bg-white rounded-2xl p-6 shadow-[0px_4px_20px_rgba(0,0,0,0.04)]">
-            <div className="flex items-start justify-between mb-6">
-                <div>
-                    <p className="text-sm text-[#6F767E] font-medium mb-1">Focus Budget</p>
-                    <p className="text-xs text-[#9A9FA5]">Daily capacity remaining</p>
-                </div>
+        <div className="bg-white rounded-2xl p-6 shadow-[0px_4px_20px_rgba(0,0,0,0.04)] relative">
+            <div className="flex items-center justify-between mb-2">
+                <h3 className="font-semibold text-[15px] text-[#1A1D1F]">Focus Budget</h3>
+                <button className="text-[#9A9FA5] hover:text-[#1A1D1F] transition-colors">
+                    <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <circle cx="12" cy="6" r="1.5" fill="currentColor" />
+                        <circle cx="12" cy="12" r="1.5" fill="currentColor" />
+                        <circle cx="12" cy="18" r="1.5" fill="currentColor" />
+                    </svg>
+                </button>
             </div>
+            <p className="text-xs text-[#9A9FA5] mb-6">Daily capacity remaining</p>
 
             <div className="flex flex-col items-center">
                 {/* Circular Progress */}

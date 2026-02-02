@@ -43,7 +43,15 @@ export function PomodoroTimer() {
     }
 
     return (
-        <div className="bg-white rounded-2xl p-6 shadow-[0px_4px_20px_rgba(0,0,0,0.04)]">
+        <div className="bg-white rounded-2xl p-6 shadow-[0px_4px_20px_rgba(0,0,0,0.04)] relative">
+            <button className="absolute top-6 right-6 text-[#9A9FA5] hover:text-[#1A1D1F] transition-colors">
+                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <circle cx="12" cy="6" r="1.5" fill="currentColor" />
+                    <circle cx="12" cy="12" r="1.5" fill="currentColor" />
+                    <circle cx="12" cy="18" r="1.5" fill="currentColor" />
+                </svg>
+            </button>
+
             <div className="flex items-center justify-between mb-4">
                 <h3 className="font-semibold text-[15px] text-[#1A1D1F]">Pomodoro</h3>
                 <div className="flex gap-1">

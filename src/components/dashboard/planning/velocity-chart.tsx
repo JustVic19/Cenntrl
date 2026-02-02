@@ -15,18 +15,20 @@ export function VelocityChart() {
     const maxCount = Math.max(...data.map(d => d.count))
 
     return (
-        <div className="bg-white rounded-2xl p-6 shadow-[0px_4px_20px_rgba(0,0,0,0.04)]">
+        <div className="bg-white rounded-2xl p-6 shadow-[0px_4px_20px_rgba(0,0,0,0.04)] relative">
             <div className="flex items-start justify-between mb-6">
                 <div>
                     <p className="text-sm text-[#6F767E] font-medium mb-2">Weekly Velocity</p>
                     <p className="text-5xl font-thin text-[#1A1D1F] leading-none">36</p>
                     <p className="text-sm text-[#0CAF60] font-bold mt-2">↗ +12% vs last week</p>
                 </div>
-                <select className="text-sm text-[#6F767E] border border-[#E5E7EB] rounded-xl px-3 py-1.5 focus:outline-none focus:border-[#6C5DD3]">
-                    <option>This Week</option>
-                    <option>Last Week</option>
-                    <option>This Month</option>
-                </select>
+                <button className="text-[#9A9FA5] hover:text-[#1A1D1F] transition-colors">
+                    <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <circle cx="12" cy="6" r="1.5" fill="currentColor" />
+                        <circle cx="12" cy="12" r="1.5" fill="currentColor" />
+                        <circle cx="12" cy="18" r="1.5" fill="currentColor" />
+                    </svg>
+                </button>
             </div>
 
             <div className="flex items-end justify-between gap-3 h-40">
