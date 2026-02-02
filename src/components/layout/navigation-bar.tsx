@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import {
     Settings,
     Bell,
@@ -37,9 +38,26 @@ const NAVIGATION_HUBS = [
 ]
 
 export function NavigationBar() {
+    const router = useRouter()
     const [activeHub, setActiveHub] = useState("Command")
     const [activeDashboard, setActiveDashboard] = useState("GTD System")
     const [hoveredHub, setHoveredHub] = useState<string | null>(null)
+
+    // Map dashboard names to routes
+    const dashboardRoutes: { [key: string]: string } = {
+        "Mission Control": "/mission",
+        "GTD System": "/dashboard",
+        "Focus Room": "/focus",
+        "Goal Tracking": "/goals",
+        "Skill Tree": "/skills",
+        "Notebook": "/notebook",
+        "Book Shelf": "/books",
+        "Finance OS": "/finance",
+        "Personal CRM": "/crm",
+        "Productivity Journal": "/journal",
+        "Fitness Tracker": "/fitness",
+        "Macro Tracker": "/macros"
+    }
 
     return (
         // Top Bar Container (Fixed Height, Single Row)
@@ -60,53 +78,71 @@ export function NavigationBar() {
                 <nav className="flex items-center gap-2 bg-white px-2 py-1.5 rounded-full shadow-sm border border-gray-100 relative">
                     {NAVIGATION_HUBS.map((hub) => {
                         const isActive = activeHub === hub.name
+                        const isOpen = hoveredHub === hub.name
 
                         return (
                             <div
                                 key={hub.name}
                                 className="relative"
-                                onMouseEnter={() => setHoveredHub(hub.name)}
-                                onMouseLeave={() => setHoveredHub(null)}
                             >
-                                {/* The Hub Pill */}
+                                {/* The Hub Pill - Click to toggle */}
                                 <button
-                                    onClick={() => setActiveHub(hub.name)}
+                                    onClick={() => {
+                                        if (isOpen) {
+                                            setHoveredHub(null)
+                                        } else {
+                                            setHoveredHub(hub.name)
+                                        }
+                                    }}
                                     className={`
-                                        flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200
-                                        ${isActive
-                                            ? "bg-[#6C5CE7] text-white shadow-md shadow-purple-200" // Active Masix Style
+                  flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200
+                  ${isActive
+                                            ? "bg-black text-white shadow-lg"
                                             : "text-gray-500 hover:text-gray-900 hover:bg-gray-50"
                                         }
-                                    `}
+                `}
                                 >
                                     {hub.icon}
                                     {hub.name}
-                                    {/* Small chevron if not active to hint dropdown */}
-                                    {!isActive && <ChevronDown size={14} className="opacity-50" />}
+                                    <ChevronDown size={14} className={`transition-transform ${isOpen ? 'rotate-180' : ''}`} />
                                 </button>
 
-                                {/* The Hover Dropdown (Appears when hovering) */}
-                                {hoveredHub === hub.name && (
-                                    <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden z-50 py-2 animate-in fade-in slide-in-from-top-2 duration-200">
-                                        {hub.dashboards.map((dashboard) => (
-                                            <button
-                                                key={dashboard}
-                                                onClick={() => {
-                                                    setActiveHub(hub.name)
-                                                    setActiveDashboard(dashboard)
-                                                }}
-                                                className={`
-                                                    w-full text-left px-4 py-2.5 text-sm transition-colors
-                                                    ${activeDashboard === dashboard
-                                                        ? "text-[#6C5CE7] font-semibold bg-purple-50"
-                                                        : "text-gray-600 hover:bg-gray-50 hover:text-black"
-                                                    }
-                                                `}
-                                            >
-                                                {dashboard}
-                                            </button>
-                                        ))}
-                                    </div>
+                                {/* The Click Dropdown */}
+                                {isOpen && (
+                                    <>
+                                        {/* Invisible overlay to close dropdown when clicking outside */}
+                                        <div
+                                            className="fixed inset-0 z-40"
+                                            onClick={() => setHoveredHub(null)}
+                                        />
+
+                                        <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden z-50 py-2">
+                                            {hub.dashboards.map((dashboard) => (
+                                                <button
+                                                    key={dashboard}
+                                                    onClick={() => {
+                                                        setActiveHub(hub.name)
+                                                        setActiveDashboard(dashboard)
+                                                        setHoveredHub(null)
+                                                        // Navigate to the dashboard route
+                                                        const route = dashboardRoutes[dashboard]
+                                                        if (route) {
+                                                            router.push(route)
+                                                        }
+                                                    }}
+                                                    className={`
+                          w-full text-left px-4 py-2.5 text-sm transition-colors
+                          ${activeDashboard === dashboard
+                                                            ? "text-black font-semibold bg-gray-100"
+                                                            : "text-gray-600 hover:bg-gray-50 hover:text-black"
+                                                        }
+                        `}
+                                                >
+                                                    {dashboard}
+                                                </button>
+                                            ))}
+                                        </div>
+                                    </>
                                 )}
                             </div>
                         )
