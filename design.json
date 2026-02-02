@@ -1,0 +1,420 @@
+{
+    "designSystem": {
+        "name": "MASIX Design System",
+        "version": "1.0.0",
+        "description": "A sophisticated medical dashboard design system featuring clean data visualization, soft glassmorphism, and premium typography."
+    },
+    "designPrinciples": {
+        "dataFirst": "Large, bold numbers take center stage. Metrics are the hero.",
+        "hierarchy": "Clear visual hierarchy through size, weight, and color contrast.",
+        "breathingRoom": "Generous white space and padding. Never cramped.",
+        "softness": "Rounded corners, gentle shadows, and smooth gradients throughout.",
+        "sophistication": "Subtle textures (diagonal stripes, dotted patterns) add depth without clutter.",
+        "consistency": "Repeated component patterns. Same style everywhere."
+    },
+    "colorPalette": {
+        "primary": {
+            "main": "#6C5DD3",
+            "gradient": "linear-gradient(135deg, #7B68EE 0%, #6C5DD3 100%)",
+            "light": "#8B7FE8",
+            "dark": "#5A4BC4"
+        },
+        "background": {
+            "page": "#F5F6FA",
+            "card": "#FFFFFF",
+            "cardHover": "#FAFBFC"
+        },
+        "text": {
+            "primary": "#1A1D1F",
+            "secondary": "#6F767E",
+            "tertiary": "#9A9FA5",
+            "inverse": "#FFFFFF"
+        },
+        "status": {
+            "success": "#0CAF60",
+            "error": "#FF5C5C",
+            "warning": "#FFA043",
+            "info": "#6C5DD3"
+        },
+        "chart": {
+            "purple": "#6C5DD3",
+            "purpleLight": "#E8E5FF",
+            "black": "#1A1D1F",
+            "gray": "#EFEFEF",
+            "accent": "#FFE5B4"
+        },
+        "border": {
+            "light": "#E5E7EB",
+            "medium": "#D1D5DB",
+            "focus": "#6C5DD3"
+        }
+    },
+    "typography": {
+        "fontFamily": {
+            "primary": "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+            "display": "'SF Pro Display', 'Inter', sans-serif",
+            "mono": "'IBM Plex Mono', 'Courier New', monospace"
+        },
+        "fontSize": {
+            "hero": "48px",
+            "h1": "32px",
+            "h2": "24px",
+            "h3": "20px",
+            "h4": "18px",
+            "body": "16px",
+            "small": "14px",
+            "tiny": "12px",
+            "micro": "10px"
+        },
+        "fontWeight": {
+            "light": 300,
+            "regular": 400,
+            "medium": 500,
+            "semibold": 600,
+            "bold": 700
+        },
+        "lineHeight": {
+            "tight": 1.2,
+            "normal": 1.5,
+            "relaxed": 1.75
+        },
+        "letterSpacing": {
+            "tight": "-0.02em",
+            "normal": "0",
+            "wide": "0.05em"
+        }
+    },
+    "spacing": {
+        "scale": {
+            "xs": "4px",
+            "sm": "8px",
+            "md": "16px",
+            "lg": "24px",
+            "xl": "32px",
+            "2xl": "48px",
+            "3xl": "64px"
+        },
+        "cardPadding": "24px",
+        "cardGap": "20px",
+        "sectionGap": "32px",
+        "elementGap": "12px"
+    },
+    "borderRadius": {
+        "none": "0px",
+        "sm": "8px",
+        "md": "12px",
+        "lg": "16px",
+        "xl": "20px",
+        "2xl": "24px",
+        "full": "9999px",
+        "card": "16px",
+        "button": "12px",
+        "badge": "8px",
+        "pill": "100px"
+    },
+    "shadows": {
+        "none": "none",
+        "sm": "0px 2px 8px rgba(0, 0, 0, 0.04)",
+        "md": "0px 4px 16px rgba(0, 0, 0, 0.06)",
+        "lg": "0px 8px 24px rgba(0, 0, 0, 0.08)",
+        "card": "0px 4px 20px rgba(0, 0, 0, 0.04)",
+        "hover": "0px 8px 32px rgba(0, 0, 0, 0.08)",
+        "focus": "0px 0px 0px 4px rgba(108, 93, 211, 0.1)"
+    },
+    "components": {
+        "card": {
+            "description": "White cards with soft shadows and rounded corners. The foundation of the layout.",
+            "background": "#FFFFFF",
+            "borderRadius": "16px",
+            "padding": "24px",
+            "shadow": "0px 4px 20px rgba(0, 0, 0, 0.04)",
+            "border": "none",
+            "hover": {
+                "shadow": "0px 8px 32px rgba(0, 0, 0, 0.06)",
+                "transform": "translateY(-2px)",
+                "transition": "all 0.3s ease"
+            }
+        },
+        "statCard": {
+            "description": "Small metric cards with title, large number, trend indicator, and mini chart",
+            "layout": "vertical",
+            "titleSize": "14px",
+            "titleColor": "#6F767E",
+            "numberSize": "32px",
+            "numberWeight": 700,
+            "numberColor": "#1A1D1F",
+            "chartHeight": "60px",
+            "trendBadge": {
+                "background": "#1A1D1F",
+                "color": "#FFFFFF",
+                "borderRadius": "8px",
+                "fontSize": "12px",
+                "padding": "4px 8px"
+            }
+        },
+        "button": {
+            "primary": {
+                "background": "#1A1D1F",
+                "color": "#FFFFFF",
+                "borderRadius": "12px",
+                "padding": "12px 24px",
+                "fontSize": "15px",
+                "fontWeight": 500,
+                "hover": {
+                    "background": "#2A2D2F",
+                    "transform": "translateY(-1px)"
+                }
+            },
+            "secondary": {
+                "background": "transparent",
+                "color": "#6F767E",
+                "border": "1px solid #E5E7EB",
+                "borderRadius": "12px",
+                "padding": "12px 24px",
+                "fontSize": "15px",
+                "fontWeight": 500,
+                "hover": {
+                    "background": "#F5F6FA",
+                    "borderColor": "#6C5DD3"
+                }
+            },
+            "ghost": {
+                "background": "transparent",
+                "color": "#6F767E",
+                "border": "none",
+                "padding": "8px 16px",
+                "hover": {
+                    "background": "#F5F6FA"
+                }
+            }
+        },
+        "navigation": {
+            "description": "Horizontal tab navigation with active pill indicator",
+            "layout": "horizontal",
+            "gap": "8px",
+            "tab": {
+                "padding": "10px 20px",
+                "fontSize": "15px",
+                "fontWeight": 500,
+                "color": "#6F767E",
+                "borderRadius": "100px",
+                "transition": "all 0.2s ease"
+            },
+            "activeTab": {
+                "background": "linear-gradient(135deg, #7B68EE 0%, #6C5DD3 100%)",
+                "color": "#FFFFFF",
+                "fontWeight": 600,
+                "shadow": "0px 4px 12px rgba(108, 93, 211, 0.3)"
+            }
+        },
+        "chart": {
+            "barChart": {
+                "barWidth": "32px",
+                "barRadius": "8px 8px 0px 0px",
+                "fill": "linear-gradient(180deg, #7B68EE 0%, #6C5DD3 100%)",
+                "pattern": "diagonal-stripes",
+                "patternOpacity": 0.3,
+                "gap": "16px"
+            },
+            "donutChart": {
+                "thickness": "16px",
+                "fill": "#6C5DD3",
+                "background": "#EFEFEF",
+                "centerLabel": {
+                    "fontSize": "24px",
+                    "fontWeight": 700
+                }
+            },
+            "lineChart": {
+                "lineWidth": "3px",
+                "lineColor": "#6C5DD3",
+                "area": true,
+                "areaOpacity": 0.1,
+                "dots": true,
+                "dotRadius": "4px"
+            }
+        },
+        "badge": {
+            "default": {
+                "background": "#1A1D1F",
+                "color": "#FFFFFF",
+                "borderRadius": "8px",
+                "padding": "6px 12px",
+                "fontSize": "13px",
+                "fontWeight": 600
+            },
+            "outlined": {
+                "background": "transparent",
+                "color": "#6F767E",
+                "border": "1px solid #E5E7EB",
+                "borderRadius": "8px",
+                "padding": "6px 12px",
+                "fontSize": "13px"
+            }
+        },
+        "dropdown": {
+            "trigger": {
+                "background": "transparent",
+                "border": "1px solid #E5E7EB",
+                "borderRadius": "12px",
+                "padding": "8px 16px",
+                "fontSize": "14px",
+                "color": "#6F767E",
+                "icon": "chevron-down",
+                "iconSize": "16px"
+            },
+            "menu": {
+                "background": "#FFFFFF",
+                "borderRadius": "12px",
+                "shadow": "0px 8px 24px rgba(0, 0, 0, 0.12)",
+                "padding": "8px",
+                "minWidth": "160px"
+            },
+            "item": {
+                "padding": "10px 14px",
+                "borderRadius": "8px",
+                "fontSize": "14px",
+                "hover": {
+                    "background": "#F5F6FA"
+                }
+            }
+        },
+        "avatar": {
+            "sizes": {
+                "xs": "24px",
+                "sm": "32px",
+                "md": "40px",
+                "lg": "56px",
+                "xl": "72px"
+            },
+            "borderRadius": "full",
+            "border": "2px solid #FFFFFF",
+            "shadow": "0px 2px 8px rgba(0, 0, 0, 0.08)"
+        },
+        "listItem": {
+            "description": "Doctor/specialist list items with avatar, name, and metadata",
+            "padding": "12px",
+            "borderRadius": "12px",
+            "gap": "12px",
+            "hover": {
+                "background": "#F5F6FA"
+            },
+            "avatar": "40px",
+            "nameSize": "15px",
+            "nameWeight": 500,
+            "metaSize": "13px",
+            "metaColor": "#9A9FA5"
+        },
+        "calendar": {
+            "header": {
+                "fontSize": "14px",
+                "fontWeight": 600,
+                "padding": "12px 16px"
+            },
+            "day": {
+                "size": "36px",
+                "borderRadius": "8px",
+                "fontSize": "14px",
+                "inactive": {
+                    "color": "#9A9FA5"
+                },
+                "active": {
+                    "background": "#6C5DD3",
+                    "color": "#FFFFFF"
+                },
+                "today": {
+                    "border": "2px solid #6C5DD3"
+                }
+            }
+        },
+        "input": {
+            "default": {
+                "background": "#F5F6FA",
+                "border": "1px solid transparent",
+                "borderRadius": "12px",
+                "padding": "12px 16px",
+                "fontSize": "15px",
+                "placeholder": {
+                    "color": "#9A9FA5"
+                },
+                "focus": {
+                    "background": "#FFFFFF",
+                    "borderColor": "#6C5DD3",
+                    "shadow": "0px 0px 0px 4px rgba(108, 93, 211, 0.1)"
+                }
+            },
+            "search": {
+                "icon": "search",
+                "iconPosition": "left",
+                "iconColor": "#9A9FA5"
+            }
+        },
+        "progressRing": {
+            "description": "Circular progress indicator with percentage",
+            "thickness": "8px",
+            "size": "120px",
+            "fill": "#6C5DD3",
+            "background": "#EFEFEF",
+            "centerLabel": {
+                "fontSize": "32px",
+                "fontWeight": 700,
+                "color": "#1A1D1F"
+            }
+        },
+        "trendIndicator": {
+            "positive": {
+                "color": "#0CAF60",
+                "icon": "arrow-up"
+            },
+            "negative": {
+                "color": "#FF5C5C",
+                "icon": "arrow-down"
+            },
+            "fontSize": "12px",
+            "fontWeight": 600
+        }
+    },
+    "patterns": {
+        "diagonalStripes": {
+            "description": "Subtle diagonal stripe pattern used in charts",
+            "angle": "45deg",
+            "color": "#000000",
+            "opacity": 0.05,
+            "spacing": "4px"
+        },
+        "dottedPattern": {
+            "description": "Dotted pattern for chart backgrounds",
+            "dotSize": "2px",
+            "spacing": "8px",
+            "color": "#E5E7EB"
+        }
+    },
+    "animations": {
+        "transition": {
+            "default": "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+            "fast": "all 0.15s cubic-bezier(0.4, 0, 0.2, 1)",
+            "slow": "all 0.5s cubic-bezier(0.4, 0, 0.2, 1)"
+        },
+        "hover": {
+            "lift": "translateY(-2px)",
+            "scale": "scale(1.02)"
+        }
+    },
+    "layout": {
+        "maxWidth": "1440px",
+        "containerPadding": "32px",
+        "gridGap": "20px",
+        "sectionSpacing": "48px",
+        "grid": {
+            "columns": 12,
+            "gutterX": "20px",
+            "gutterY": "20px"
+        }
+    },
+    "accessibility": {
+        "focusVisible": "2px solid #6C5DD3",
+        "focusOffset": "2px",
+        "minTouchTarget": "44px",
+        "colorContrast": "WCAG AA"
+    }
+}
